@@ -1,7 +1,7 @@
 DarkSwack
 =========
 
-A total amaze 3d engine for Dreamcast
+A total amaze "3d" engine for Dreamcast
 -------------------------------------
 
 So to get started using this "engine" you first gotta get the KOS shit all setup. This took me awhile but here's what I did:
