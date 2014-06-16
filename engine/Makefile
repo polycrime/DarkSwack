@@ -12,8 +12,7 @@ rm-elf:
 	-rm -f $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(KOS_CC) $(KOS_CFLAGS) $(KOS_LDFLAGS) -o $(TARGET) $(KOS_START) \
-		$(OBJS) $(OBJEXTRA) -lgl -lpcx -lkosutils $(KOS_LIBS)
+	kos-c++ -o $(TARGET) $(OBJS) -lgl -lpcx -lkosutils
 
 run: $(TARGET)
 	$(KOS_LOADER) $(TARGET)
