@@ -1,7 +1,24 @@
 #include <kos.h>
 
+int map[10][10] = {
+	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+	{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+};
+
 class DarkSwack {
 	public:
+		DarkSwack() {
+			playerPosX = playerPosY = 5;
+		}
+
 		void init() {
 			vid_set_mode(DM_640x480, PM_RGB565);
 		}
@@ -24,7 +41,7 @@ class DarkSwack {
 		bool render() {
 			for(int i = 0; i < resX; i++) {
 				for(int j = 0; j < resY; j++) {
-					draw_pixel(i, j, 0xFF);
+					draw_pixel(i, j, 0xCC);
 				}
 			}
 			return true;
@@ -36,6 +53,9 @@ class DarkSwack {
 
 		static const int resX = 640;
 		static const int resY = 480;
+
+		double playerPosX;
+		double playerPosY;
 };
 
 int main(int argc, char **argv) {
